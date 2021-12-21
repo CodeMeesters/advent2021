@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ TestReader.class })
+@SuiteClasses({ TestReader.class, TestMovementCalculator.class })
 public class AllTests {
 
 }
