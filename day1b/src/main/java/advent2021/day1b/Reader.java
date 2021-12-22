@@ -1,4 +1,4 @@
-package advent2021.day1;
+package advent2021.day1b;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

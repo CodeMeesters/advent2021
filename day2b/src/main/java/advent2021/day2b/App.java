@@ -1,11 +1,9 @@
-package advent2021.day2;
+package advent2021.day2b;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import advent2021.day2.MovementCalculator;
-import advent2021.day2.MovementCalculator.TotalMovement;
-import advent2021.day2.Reader;
+import advent2021.day2b.MovementCalculator.TotalMovement;
 
 public class App {
   public static void main(String[] args) throws FileNotFoundException {
