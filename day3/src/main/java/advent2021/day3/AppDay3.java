@@ -1,11 +1,11 @@
-package advent2021.day2b;
+package advent2021.day3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import advent2021.day2b.MovementCalculator.TotalMovement;
+import advent2021.day3.Calculator.Totals;
 
-public class App {
+public class AppDay3 {
   public static void main(String[] args) throws FileNotFoundException {
     File file = new File("data/input.txt");
     String absolutePath = file.getAbsolutePath();
@@ -13,8 +13,8 @@ public class App {
     Reader reader = new Reader();
     reader.read(absolutePath);
     
-    MovementCalculator calculator = new MovementCalculator(reader.getItems());
-    TotalMovement totalMovement = calculator.calculate();
-    System.out.println(totalMovement.product);
+    Calculator calculator = new Calculator(reader.getItems());
+    Totals totals = calculator.calculate();
+    System.out.println(totals.getPowerConsumption());
   }
 }

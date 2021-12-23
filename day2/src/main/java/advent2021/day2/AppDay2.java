@@ -7,7 +7,7 @@ import advent2021.day2.MovementCalculator;
 import advent2021.day2.MovementCalculator.TotalMovement;
 import advent2021.day2.Reader;
 
-public class App {
+public class AppDay2 {
   public static void main(String[] args) throws FileNotFoundException {
     File file = new File("data/input.txt");
     String absolutePath = file.getAbsolutePath();
