@@ -83,4 +83,8 @@ public class Simulator {
     return mOctopuses.sumOfInt(Octopus::getNumberOfFlashes);
   }
 
+  public boolean allLevel0() {
+    return mOctopuses.allSatisfy(o -> o.getLevel() == 0);
+  }
+
 }

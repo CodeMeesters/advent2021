@@ -41,6 +41,39 @@ public class TestSimulator {
     thenTheTotalNumberOfFlashesShouldBe(1656);
   }
 
+
+  @Test
+  public void simulateUntilSimultaneous() {
+    givenADataSet();
+    givenASimulator();
+    thenTheCurrentSituationForRowShouldBe(2, IntLists.immutable.with(2,7,4,5,8,5,4,7,1,1));
+    thenTheCurrentSituationForRowShouldBe(10, IntLists.immutable.with(5,2,8,3,7,5,1,5,2,6));
+    whenStepping(194);
+    thenTheCurrentSituationForRowShouldBe(1, IntLists.immutable.with(6,9,8,8,8,8,8,8,8,8));
+    thenTheCurrentSituationForRowShouldBe(2, IntLists.immutable.with(9,9,8,8,8,8,8,8,8,8));
+    thenTheCurrentSituationForRowShouldBe(10, IntLists.immutable.with(8,8,8,8,8,8,8,8,8,8));
+    whenStepping(1);
+    thenTheCurrentSituationForRowShouldBe(1, IntLists.immutable.with(0,0,0,0,0,0,0,0,0,0));
+    thenTheCurrentSituationForRowShouldBe(2, IntLists.immutable.with(0,0,0,0,0,0,0,0,0,0));
+    thenTheCurrentSituationForRowShouldBe(10, IntLists.immutable.with(0,0,0,0,0,0,0,0,0,0));
+    
+    givenADataSet();
+    givenASimulator();
+    whenSteppingUntilSimultaneous();
+    thenTheStepSizeShouldBe(195);
+  }
+  
+  private void thenTheStepSizeShouldBe(int pExpected) {
+    assertEquals(pExpected, mSimulator.getSteps());
+  }
+
+  private void whenSteppingUntilSimultaneous() {
+    while (!mSimulator.allLevel0()) {
+      mSimulator.step();
+    }
+  }
+
+
   private void thenTheTotalNumberOfFlashesShouldBe(long pExpected) {
     assertEquals(pExpected, mSimulator.getNumberOfFlashes());
   }
